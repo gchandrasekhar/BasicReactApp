@@ -1,5 +1,28 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+  padding:10px;
+  margin:10px;
+}
+
+.member-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next line if there are too many items */
+  gap: 10px; /* Adds spacing between the boxes */
+  justify-content: center; /* Centers the items horizontally */
+}
+
+.member {
+  font-size: 20px;
+  border: 1px solid #ccc; /* Adds a border around each box */
+  padding: 10px; /* Adds some padding inside the box */
+  width: 200px; /* Sets a fixed width for each box */
+  text-align: center; /* Centers the text inside the box */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 5px; /* Rounds the corners of the box */
 }
 
 .App-logo {
