@@ -2,6 +2,12 @@
   text-align: left;
 }
 
+.draw-button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 20px; /* Adds some space above the button */
+}
+
 * {
   box-sizing: border-box;
   padding:10px;
@@ -23,6 +29,7 @@
   text-align: center; /* Centers the text inside the box */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   border-radius: 5px; /* Rounds the corners of the box */
+  transition: background-color 0.3s, border 0.3s; /* Smooth transition for highlighting */
 }
 
 .App-logo {

@@ -1,0 +1,13 @@
+.draw-button {
+    background-color: var(--color-primary);
+    padding:10px 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .draw-button:hover {
+    background-color: #005bb5; /* Darker shade on hover */
+  }
