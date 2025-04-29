@@ -38,8 +38,8 @@ import Message from './components/message/Message';
 function App() {
   let [score, scoreFun] = useState(0);
 
-  function incrementCounter(){
-      score = score + 1;
+  function incrementCounter(value){
+      score = score + value;
       scoreFun(score);
   }
     
