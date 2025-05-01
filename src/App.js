@@ -35,12 +35,16 @@ import Message from './components/message/Message';
 //   );
 // }
 
-function App() {
-  let [score, scoreFun] = useState(0);
+function App(props) {
+  const {initialScore} = props;
+  let [score, scoreFun] = useState(initialScore);
 
   function incrementCounter(value){
       score = score + value;
-      scoreFun(score);
+      // scoreFun(function (currentValue){
+      //   return currentValue+value;
+      // });
+      scoreFun((currentValue)=>currentValue+value);
   }
     
   return (
