@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import CBC from './CBC.js';
 // import FBC from './FBC.js';
-import { Member } from './Member.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
