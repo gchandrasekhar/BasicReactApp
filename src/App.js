@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import ScoreCard from './components/scorecard/ScoreCard';
 import ScoreCardButton from './components/scorebutton/ScoreCardButton';
 import Message from './components/message/Message';
@@ -38,6 +38,7 @@ import Message from './components/message/Message';
 function App(props) {
   const {initialScore} = props;
   let [score, scoreFun] = useState(initialScore);
+  const [posts, setPosts] = useState([]);
 
   function incrementCounter(value){
       score = score + value;
@@ -46,11 +47,42 @@ function App(props) {
       // });
       scoreFun((currentValue)=>currentValue+value);
   }
+
+  useEffect(() => {
+    console.log("NETWORK NETWORK NETWORK");
+    async function getData(){
+      const fetchResult = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const getData = await fetchResult.json();
+      console.log(getData);
+      setPosts(getData);
+    }
+    if(score%5 === 0 && score !== 0){
+      getData();
+    }
+  }
+  , [score]);
+
+  useEffect(() => {
+    console.log("HI HI HI");
+  }, []);
+
+  useEffect(() => {
+    console.log("HELLO HELLO HELLO");
+  }, []);
     
   return (
     <div><ScoreCard score={score}/>
     <ScoreCardButton scoreCount={incrementCounter}/>
-    <Message /></div>
+    <Message />
+    <div className="posts">
+      {posts.map((post) => (
+        <div key={post.id} className="post">
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </div>
+      ))}
+      </div>
+    </div>
   );
 }
 
